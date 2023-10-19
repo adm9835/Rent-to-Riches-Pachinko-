@@ -1,16 +1,16 @@
 extends Sprite2D
 
 @onready var computer = $".."
-@onready var fire_png = preload("res://Art/fire.png")
-@onready var stone_png = preload("res://Art/stone.png")
-@onready var wood_png = preload("res://Art/wood.png")
+@onready var fire_png = preload("res://Art/Sprites/fire.png")
+@onready var stone_png = preload("res://Art/Sprites/stone.png")
+@onready var wood_png = preload("res://Art/Sprites/wood.png")
 @onready var camera_2d = $"../Camera2D"
 
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	global_position = camera_2d.get_global_mouse_position()
 	if computer.item_held:
 		match computer.held_item:

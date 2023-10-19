@@ -12,9 +12,9 @@ extends Control
 @export var item_held = false
 @export var held_item : String
 @onready var camera_2d = $Camera2D
-@onready var fire_drop_scene = preload("res://Objects/fire_drop.tscn")
-@onready var stone_drop_scene = preload("res://Objects/stone_drop.tscn")
-@onready var wood_drop_scene = preload("res://Objects/wood_drop.tscn")
+@onready var fire_drop_scene = preload("res://Objects/Drops/fire_drop.tscn")
+@onready var stone_drop_scene = preload("res://Objects/Drops/stone_drop.tscn")
+@onready var wood_drop_scene = preload("res://Objects/Drops/wood_drop.tscn")
 @onready var drops = $PanelContainer/TabContainer/Game/PachinkoMachine/Drops
 
 func _process(_delta):
@@ -70,26 +70,26 @@ func _on_fire_grab_gui_input(event):
 		item_held = true
 		held_item = "fire"
 
-func _on_dropper_area_input_event(viewport, event, shape_idx):
+func _on_dropper_area_input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("click") and item_held:
 		place_item()
 
 func wood_spawn(score):
 	for i in score:
 		var new_drop = wood_drop_scene.instantiate()
-		get_tree().get_root().add_child(new_drop)
+		get_tree().get_root().add_child.call_deferred(new_drop)
 		new_drop.position = global.package_dropoff
 
 func stone_spawn(score):
 	for i in score:
 		var new_drop = stone_drop_scene.instantiate()
-		get_tree().get_root().add_child(new_drop)
+		get_tree().get_root().add_child.call_deferred(new_drop)
 		new_drop.position = global.package_dropoff
 
 func fire_spawn(score):
 	for i in score:
 		var new_drop = fire_drop_scene.instantiate()
-		get_tree().get_root().add_child(new_drop)
+		get_tree().get_root().add_child.call_deferred(new_drop)
 		new_drop.position = global.package_dropoff
 
 func _on_one_body_entered(body):

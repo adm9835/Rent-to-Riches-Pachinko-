@@ -44,7 +44,7 @@ func check_purchases():
 		lock_boot = true
 	if global.has_spring and not lock_spring:
 		jump = -40
-		lock_spring
+		lock_spring = true
 
 func handle_actions():
 	if Input.is_action_pressed("left"):

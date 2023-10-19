@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci7hhfoggtmi1"
-path="res://.godot/imported/stone.png-a2d836eba271d9b972e36c6cdcab9c64.ctex"
+uid="uid://do3b6u0bail40"
+path="res://.godot/imported/skybox.png-66ff4cd1f42940bc9338b52beb7aa236.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/stone.png"
-dest_files=["res://.godot/imported/stone.png-a2d836eba271d9b972e36c6cdcab9c64.ctex"]
+source_file="res://Art/Tileset/skybox.png"
+dest_files=["res://.godot/imported/skybox.png-66ff4cd1f42940bc9338b52beb7aa236.ctex"]
 
 [params]
 

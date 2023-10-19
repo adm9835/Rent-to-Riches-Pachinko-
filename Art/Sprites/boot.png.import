@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dac0qrdnbs55c"
-path="res://.godot/imported/cashlesscitruscarter-2.png-0f4d790b1ff46ae8195c5ee05d69612b.ctex"
+uid="uid://dqvh3f5bw564y"
+path="res://.godot/imported/boot.png-1456077a2a9fa95fa536fdf21bfe0648.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cashlesscitruscarter-2.png"
-dest_files=["res://.godot/imported/cashlesscitruscarter-2.png-0f4d790b1ff46ae8195c5ee05d69612b.ctex"]
+source_file="res://Art/Sprites/boot.png"
+dest_files=["res://.godot/imported/boot.png-1456077a2a9fa95fa536fdf21bfe0648.ctex"]
 
 [params]
 

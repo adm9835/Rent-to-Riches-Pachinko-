@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bstpb3ve7sf7y"]
 
-[ext_resource type="Script" path="res://Objects/woodstonefire.gd" id="1_wgdp7"]
-[ext_resource type="Texture2D" uid="uid://57o4fjrltqda" path="res://Art/wood.png" id="1_yjqpu"]
+[ext_resource type="Script" path="res://Objects/Drops/woodstonefire.gd" id="1_lj6tb"]
+[ext_resource type="Texture2D" uid="uid://57o4fjrltqda" path="res://Art/Sprites/wood.png" id="2_f5iag"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lyo3k"]
 bounce = 0.75
@@ -13,12 +13,12 @@ radius = 6.0
 physics_material_override = SubResource("PhysicsMaterial_lyo3k")
 gravity_scale = 0.25
 can_sleep = false
-script = ExtResource("1_wgdp7")
+script = ExtResource("1_lj6tb")
 type = "wood"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_yjqpu")
+texture = ExtResource("2_f5iag")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-0.5, 2)

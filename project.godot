@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Rent or Riches, Pachinko!"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Game Levels/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://Art/icon.svg"
+config/icon="res://Art/Sprites/icon.svg"
 
 [autoload]
 
-global="*res://global.gd"
+global="*res://Objects/global.gd"
 
 [display]
 

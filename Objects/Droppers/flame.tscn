@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b17b2hgiioy0b"]
+[gd_scene load_steps=10 format=3 uid="uid://cnlmmm0gstgp7"]
 
-[ext_resource type="Texture2D" uid="uid://bgkgauo4be8wi" path="res://Art/tileset.png" id="1_qjlwm"]
-[ext_resource type="Script" path="res://Objects/treerockflame.gd" id="2_y0wt1"]
-[ext_resource type="PackedScene" uid="uid://bstpb3ve7sf7y" path="res://Objects/wood_drop.tscn" id="3_jfrv7"]
-[ext_resource type="AudioStream" uid="uid://0rqvjv5b4u00" path="res://Sound/treedeath.mp3" id="4_l2sgo"]
-[ext_resource type="AudioStream" uid="uid://o43cg4joycxl" path="res://Sound/treealive.mp3" id="5_kra0j"]
+[ext_resource type="Texture2D" uid="uid://bgkgauo4be8wi" path="res://Art/Tileset/tileset.png" id="1_yq25w"]
+[ext_resource type="Script" path="res://Objects/Droppers/treerockflame.gd" id="2_xrkt5"]
+[ext_resource type="PackedScene" uid="uid://dc3v8i847xpbm" path="res://Objects/fire_drop.tscn" id="3_7ibln"]
+[ext_resource type="AudioStream" uid="uid://dl5mspkrui722" path="res://Sound/flamedeath.mp3" id="4_44c32"]
+[ext_resource type="AudioStream" uid="uid://ckiq5aedmqck5" path="res://Sound/flamealive.mp3" id="5_uyhga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5st81"]
 size = Vector2(16, 16)
@@ -33,15 +33,15 @@ _data = {
 "death": SubResource("Animation_3v53c")
 }
 
-[node name="Tree" type="Sprite2D"]
+[node name="Flame" type="Sprite2D"]
 scale = Vector2(2, 2)
-texture = ExtResource("1_qjlwm")
+texture = ExtResource("1_yq25w")
 region_enabled = true
-region_rect = Rect2(16, 96, 16, 16)
-script = ExtResource("2_y0wt1")
-woodstonefire_scene = ExtResource("3_jfrv7")
-number_of_hits = 3
-particle_color = Color(0.439216, 0.215686, 0.0509804, 1)
+region_rect = Rect2(0, 96, 16, 16)
+script = ExtResource("2_xrkt5")
+woodstonefire_scene = ExtResource("3_7ibln")
+number_of_hits = 4
+particle_color = Color(0.803922, 0.329412, 0.168627, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 9
@@ -56,10 +56,10 @@ libraries = {
 }
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_l2sgo")
+stream = ExtResource("4_44c32")
 
 [node name="AliveSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_kra0j")
+stream = ExtResource("5_uyhga")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false

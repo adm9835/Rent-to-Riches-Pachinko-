@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://k1g2fasyd6r4"]
 
-[ext_resource type="PackedScene" uid="uid://bs11lnhswf276" path="res://Objects/Pachinko Machine/lever.tscn" id="1_7r5lv"]
-[ext_resource type="TileSet" uid="uid://dq4xahnvwc88j" path="res://Resources/pachinkotileset.tres" id="2_6kcfm"]
-[ext_resource type="Texture2D" uid="uid://bgkgauo4be8wi" path="res://Art/tileset.png" id="6_kf7lf"]
+[ext_resource type="PackedScene" uid="uid://bs11lnhswf276" path="res://Game Levels/Pachinko Machine/lever.tscn" id="1_sehj8"]
+[ext_resource type="TileSet" uid="uid://dq4xahnvwc88j" path="res://Resources/pachinkotileset.tres" id="2_7s0gh"]
+[ext_resource type="Texture2D" uid="uid://bgkgauo4be8wi" path="res://Art/Tileset/tileset.png" id="3_ud7yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eqa6"]
 size = Vector2(112, 5)
 
 [node name="PachinkoMachine" type="Node2D"]
 
-[node name="Lever" parent="." instance=ExtResource("1_7r5lv")]
+[node name="Lever" parent="." instance=ExtResource("1_sehj8")]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("2_6kcfm")
+tile_set = ExtResource("2_7s0gh")
 format = 2
 layer_0/name = "Background"
 layer_0/tile_data = PackedInt32Array(0, 131072, 1, 1, 131072, 1, 2, 131072, 1, -65539, 65536, 0, -3, 65536, 1, 65533, 65536, 1, -65538, 131072, 0, -2, 131072, 1, 65534, 131072, 1, -65537, 131072, 0, -1, 131072, 1, 65535, 131072, 1, -131072, 131072, 0, -65536, 131072, 1, -131071, 131072, 0, -65535, 131072, 1, -131070, 131072, 0, -65534, 131072, 1, 196605, 65536, 1, 262141, 65536, 1, 327677, 65536, 1, 196606, 131072, 1, 262142, 131072, 1, 327678, 131072, 1, 196607, 131072, 1, 262143, 131072, 1, 327679, 131072, 1, 131072, 131072, 1, 196608, 131072, 1, 262144, 131072, 1, 131073, 131072, 1, 196609, 131072, 1, 262145, 131072, 1, 131074, 131072, 1, 196610, 131072, 1, 262146, 131072, 1, 393213, 65536, 2, 393214, 131072, 2, 393215, 131072, 2, 327680, 131072, 2, 327681, 131072, 2, 327682, 131072, 2, -131067, 196608, 0, -65531, 196608, 1, 5, 196608, 1, 131077, 196608, 1, 196613, 196608, 1, 262149, 196608, 1, 327685, 196608, 2, 131070, 131072, 1, 131071, 131072, 1, 65536, 131072, 1, 65537, 131072, 1, 65538, 131072, 1, 65539, 131072, 1, 65540, 131072, 1, 131076, 131072, 1, 196612, 131072, 1, 262148, 131072, 1, 262147, 131072, 1, 196611, 131072, 1, 131075, 131072, 1, 3, 131072, 1, -65533, 131072, 1, -65532, 131072, 1, 4, 131072, 1, 327683, 131072, 2, 327684, 131072, 2, 65541, 196608, 1, -131069, 131072, 0, -131068, 131072, 0, 131069, 65536, 1)
@@ -44,6 +44,6 @@ shape = SubResource("RectangleShape2D_6eqa6")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(24, -16.5)
 scale = Vector2(2.94737, 2.5)
-texture = ExtResource("6_kf7lf")
+texture = ExtResource("3_ud7yb")
 region_enabled = true
 region_rect = Rect2(83, 69, 38, 2)

@@ -1,25 +1,25 @@
 [gd_scene load_steps=25 format=3 uid="uid://ut277gcae5a5"]
 
-[ext_resource type="Texture2D" uid="uid://bgkgauo4be8wi" path="res://Art/tileset.png" id="1_gs0pj"]
 [ext_resource type="Script" path="res://Game Levels/computer.gd" id="1_nigmy"]
-[ext_resource type="Texture2D" uid="uid://57o4fjrltqda" path="res://Art/wood.png" id="2_6aduj"]
-[ext_resource type="Texture2D" uid="uid://ci7hhfoggtmi1" path="res://Art/stone.png" id="3_7ow5c"]
-[ext_resource type="Texture2D" uid="uid://bd7lq2i1yfi2b" path="res://Art/fire.png" id="4_ntq5y"]
-[ext_resource type="Texture2D" uid="uid://dn65sxw0ob500" path="res://Art/coin.png" id="5_i4b6c"]
-[ext_resource type="PackedScene" uid="uid://bs11lnhswf276" path="res://Objects/Pachinko Machine/lever.tscn" id="7_flpfp"]
-[ext_resource type="Texture2D" uid="uid://cwsyigu5xif4p" path="res://Art/tool.png" id="8_0xyn2"]
+[ext_resource type="Texture2D" uid="uid://bgkgauo4be8wi" path="res://Art/Tileset/tileset.png" id="2_hrnab"]
+[ext_resource type="Texture2D" uid="uid://57o4fjrltqda" path="res://Art/Sprites/wood.png" id="3_ti2kj"]
+[ext_resource type="Texture2D" uid="uid://ci7hhfoggtmi1" path="res://Art/Sprites/stone.png" id="4_cveo4"]
+[ext_resource type="Texture2D" uid="uid://bd7lq2i1yfi2b" path="res://Art/Sprites/fire.png" id="5_78b5d"]
+[ext_resource type="Texture2D" uid="uid://dn65sxw0ob500" path="res://Art/Sprites/coin.png" id="6_4f0y7"]
+[ext_resource type="PackedScene" uid="uid://bs11lnhswf276" path="res://Game Levels/Pachinko Machine/lever.tscn" id="7_flpfp"]
 [ext_resource type="TileSet" uid="uid://dq4xahnvwc88j" path="res://Resources/pachinkotileset.tres" id="8_7prjv"]
-[ext_resource type="Texture2D" uid="uid://dqvh3f5bw564y" path="res://Art/boot.png" id="9_alih5"]
-[ext_resource type="Texture2D" uid="uid://c3rkgsoyuu42d" path="res://Art/spring.png" id="10_gctg6"]
-[ext_resource type="Texture2D" uid="uid://2ae5bvjkr7u2" path="res://Art/seed.png" id="11_7ny4f"]
+[ext_resource type="Texture2D" uid="uid://cwsyigu5xif4p" path="res://Art/Sprites/tool.png" id="9_4iqx5"]
+[ext_resource type="Texture2D" uid="uid://dqvh3f5bw564y" path="res://Art/Sprites/boot.png" id="10_prwsy"]
+[ext_resource type="Texture2D" uid="uid://c3rkgsoyuu42d" path="res://Art/Sprites/spring.png" id="11_hbgkc"]
 [ext_resource type="Script" path="res://Game Levels/ItemHolder.gd" id="12_04bd5"]
+[ext_resource type="Texture2D" uid="uid://2ae5bvjkr7u2" path="res://Art/Sprites/seed.png" id="12_knnp0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm52c"]
 content_margin_left = 100.0
 content_margin_top = 48.0
 content_margin_right = 100.0
 content_margin_bottom = 120.0
-texture = ExtResource("1_gs0pj")
+texture = ExtResource("2_hrnab")
 region_rect = Rect2(100, 91, 12, 9)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qccqx"]
@@ -27,7 +27,7 @@ content_margin_left = 24.0
 content_margin_top = 8.0
 content_margin_right = 24.0
 content_margin_bottom = 4.0
-texture = ExtResource("1_gs0pj")
+texture = ExtResource("2_hrnab")
 region_rect = Rect2(0, 192, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eqa6"]
@@ -72,7 +72,7 @@ zoom = Vector2(1.75, 1.75)
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(16, -13.5)
 scale = Vector2(41.75, 28.8125)
-texture = ExtResource("1_gs0pj")
+texture = ExtResource("2_hrnab")
 region_enabled = true
 region_rect = Rect2(64, 96, 16, 16)
 
@@ -92,7 +92,6 @@ layout_mode = 2
 clip_tabs = false
 
 [node name="Game" type="Control" parent="PanelContainer/TabContainer"]
-visible = false
 layout_mode = 2
 mouse_filter = 1
 
@@ -121,7 +120,7 @@ columns = 2
 
 [node name="WoodGrab" type="TextureRect" parent="PanelContainer/TabContainer/Game/VBoxContainer/PanelContainer/GridContainer"]
 layout_mode = 2
-texture = ExtResource("2_6aduj")
+texture = ExtResource("3_ti2kj")
 expand_mode = 3
 stretch_mode = 5
 
@@ -131,7 +130,7 @@ text = "?"
 
 [node name="StoneGrab" type="TextureRect" parent="PanelContainer/TabContainer/Game/VBoxContainer/PanelContainer/GridContainer"]
 layout_mode = 2
-texture = ExtResource("3_7ow5c")
+texture = ExtResource("4_cveo4")
 expand_mode = 3
 stretch_mode = 5
 
@@ -141,7 +140,7 @@ text = "?"
 
 [node name="FireGrab" type="TextureRect" parent="PanelContainer/TabContainer/Game/VBoxContainer/PanelContainer/GridContainer"]
 layout_mode = 2
-texture = ExtResource("4_ntq5y")
+texture = ExtResource("5_78b5d")
 expand_mode = 3
 stretch_mode = 5
 
@@ -162,7 +161,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Game/VBoxContainer/PanelContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-texture = ExtResource("5_i4b6c")
+texture = ExtResource("6_4f0y7")
 expand_mode = 1
 stretch_mode = 5
 
@@ -208,7 +207,7 @@ shape = SubResource("RectangleShape2D_6eqa6")
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer/TabContainer/Game/PachinkoMachine/StaticBody2D"]
 position = Vector2(24, -16.5)
 scale = Vector2(2.94737, 2.5)
-texture = ExtResource("1_gs0pj")
+texture = ExtResource("2_hrnab")
 region_enabled = true
 region_rect = Rect2(83, 69, 38, 2)
 
@@ -290,7 +289,7 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer/PanelContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-texture = ExtResource("5_i4b6c")
+texture = ExtResource("6_4f0y7")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer/PanelContainer2/HBoxContainer"]
@@ -308,7 +307,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_6aduj")
+texture = ExtResource("3_ti2kj")
 expand_mode = 3
 stretch_mode = 5
 
@@ -318,7 +317,7 @@ text = "?"
 
 [node name="TextureRect2" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_7ow5c")
+texture = ExtResource("4_cveo4")
 expand_mode = 3
 stretch_mode = 5
 
@@ -328,7 +327,7 @@ text = "?"
 
 [node name="TextureRect3" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_ntq5y")
+texture = ExtResource("5_78b5d")
 expand_mode = 3
 stretch_mode = 5
 
@@ -365,13 +364,13 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("8_0xyn2")
+texture = ExtResource("9_4iqx5")
 stretch_mode = 3
 
 [node name="BuyTool" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
 text = "100"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -380,13 +379,13 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
-texture = ExtResource("9_alih5")
+texture = ExtResource("10_prwsy")
 stretch_mode = 3
 
 [node name="BuyBoot" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
 text = "150"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -395,13 +394,13 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("10_gctg6")
+texture = ExtResource("11_hbgkc")
 stretch_mode = 3
 
 [node name="BuySpring" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
 text = "200"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -410,13 +409,13 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
-texture = ExtResource("11_7ny4f")
+texture = ExtResource("12_knnp0")
 stretch_mode = 3
 
 [node name="BuySeed" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer3/VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
 text = "250"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -444,13 +443,13 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_6aduj")
+texture = ExtResource("3_ti2kj")
 stretch_mode = 3
 
 [node name="SellWood" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
 text = "1"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -459,13 +458,13 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
-texture = ExtResource("3_7ow5c")
+texture = ExtResource("4_cveo4")
 stretch_mode = 3
 
 [node name="SellStone" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
 text = "2"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -474,15 +473,16 @@ size_flags_vertical = 8
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("4_ntq5y")
+texture = ExtResource("5_78b5d")
 stretch_mode = 3
 
 [node name="SellFire" type="Button" parent="PanelContainer/TabContainer/Shop/VBoxContainer/HBoxContainer2/PanelContainer4/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
 text = "3"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="Email" type="Control" parent="PanelContainer/TabContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 1
 
@@ -511,7 +511,7 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/Email/BoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-texture = ExtResource("5_i4b6c")
+texture = ExtResource("6_4f0y7")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="PanelContainer/TabContainer/Email/BoxContainer/VBoxContainer/PanelContainer2/HBoxContainer"]
@@ -550,7 +550,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "1000"
-icon = ExtResource("5_i4b6c")
+icon = ExtResource("6_4f0y7")
 
 [node name="Button" type="Button" parent="PanelContainer"]
 custom_minimum_size = Vector2(32, 32)

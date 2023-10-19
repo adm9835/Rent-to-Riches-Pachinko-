@@ -1,8 +1,8 @@
 extends Area2D
 
-@onready var tree_scene = preload("res://Objects/tree.tscn")
-@onready var rock_scene = preload("res://Objects/rock.tscn")
-@onready var flame_scene = preload("res://Objects/flame.tscn")
+@onready var tree_scene = preload("res://Objects/Droppers/tree.tscn")
+@onready var rock_scene = preload("res://Objects/Droppers/rock.tscn")
+@onready var flame_scene = preload("res://Objects/Droppers/flame.tscn")
 
 @onready var tree_timer = $TreeTimer
 @onready var rock_timer = $RockTimer

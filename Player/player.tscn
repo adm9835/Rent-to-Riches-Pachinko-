@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://b0bp8ouett8pf"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_uckg2"]
-[ext_resource type="Texture2D" uid="uid://b4460wdj5jgt4" path="res://Art/cashlesscitruscarter-sheet.png" id="2_80ql5"]
+[ext_resource type="Texture2D" uid="uid://b4460wdj5jgt4" path="res://Art/Character/cashlesscitruscarter-sheet.png" id="2_islnb"]
 [ext_resource type="AudioStream" uid="uid://d4geeqjkn8gy7" path="res://Sound/walkgrass.mp3" id="3_y5vux"]
 [ext_resource type="AudioStream" uid="uid://4iprtko48me2" path="res://Sound/hit.wav" id="4_sd5r4"]
 
@@ -235,7 +235,7 @@ states/walk/position = Vector2(288.333, 181.333)
 states/walk_swing/node = SubResource("AnimationNodeAnimation_61rp5")
 states/walk_swing/position = Vector2(535.667, 172)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_xhn86"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ojwve"), "idle", "swing", SubResource("AnimationNodeStateMachineTransition_e17ai"), "swing", "walk_swing", SubResource("AnimationNodeStateMachineTransition_53n7h"), "walk", "walk_swing", SubResource("AnimationNodeStateMachineTransition_2gp70"), "walk_swing", "walk", SubResource("AnimationNodeStateMachineTransition_6s6u8"), "walk_swing", "swing", SubResource("AnimationNodeStateMachineTransition_suhpl"), "swing", "idle", SubResource("AnimationNodeStateMachineTransition_mxiyt"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_blo00"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_qcnsr"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_us2tk"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_2fjaw"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_bxboq"), "swing", "jump", SubResource("AnimationNodeStateMachineTransition_sdqao"), "walk_swing", "jump", SubResource("AnimationNodeStateMachineTransition_15faw")]
-graph_offset = Vector2(-168, 6)
+graph_offset = Vector2(-170, -5)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_uckg2")
@@ -244,7 +244,7 @@ script = ExtResource("1_uckg2")
 shape = SubResource("RectangleShape2D_tt113")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_80ql5")
+texture = ExtResource("2_islnb")
 hframes = 4
 vframes = 4
 region_rect = Rect2(87, 217, 5, 7)

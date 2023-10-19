@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3rkgsoyuu42d"
-path="res://.godot/imported/spring.png-096889717da440c7273cc808908d797e.ctex"
+uid="uid://2ae5bvjkr7u2"
+path="res://.godot/imported/seed.png-2914fa45338fd504afe2aafeeb184c4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/spring.png"
-dest_files=["res://.godot/imported/spring.png-096889717da440c7273cc808908d797e.ctex"]
+source_file="res://Art/Sprites/seed.png"
+dest_files=["res://.godot/imported/seed.png-2914fa45338fd504afe2aafeeb184c4b.ctex"]
 
 [params]
 
