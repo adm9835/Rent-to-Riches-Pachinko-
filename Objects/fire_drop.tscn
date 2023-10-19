@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc3v8i847xpbm"]
+
+[ext_resource type="Script" path="res://Objects/woodstonefire.gd" id="1_8bxdc"]
+[ext_resource type="Texture2D" uid="uid://bd7lq2i1yfi2b" path="res://Art/fire.png" id="2_f2uy0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_atyj6"]
+bounce = 0.75
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4f6o"]
+radius = 6.0
+
+[node name="FireDrop" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_atyj6")
+gravity_scale = 0.25
+can_sleep = false
+script = ExtResource("1_8bxdc")
+type = "fire"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_f2uy0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(0, 7, 4, 4, 6, -1, 3, -2, 0, -3, -4, -1, -5, 2, -4, 5, -1, 7)
+
+[node name="CollectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_e4f6o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

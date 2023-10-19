@@ -1,0 +1,287 @@
+[gd_scene load_steps=38 format=3 uid="uid://b0bp8ouett8pf"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_uckg2"]
+[ext_resource type="Texture2D" uid="uid://b4460wdj5jgt4" path="res://Art/cashlesscitruscarter-sheet.png" id="2_80ql5"]
+[ext_resource type="AudioStream" uid="uid://d4geeqjkn8gy7" path="res://Sound/walkgrass.mp3" id="3_y5vux"]
+[ext_resource type="AudioStream" uid="uid://4iprtko48me2" path="res://Sound/hit.wav" id="4_sd5r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt113"]
+size = Vector2(8, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_87x61"]
+
+[sub_resource type="Animation" id="Animation_bbg4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_br0eo"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_jhxiv"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_xywal"]
+resource_name = "jump_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.28319, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8bcev"]
+resource_name = "swing"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_oo3xh"]
+resource_name = "walk"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_evyug"]
+resource_name = "walk_swing"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3r1v"]
+_data = {
+"RESET": SubResource("Animation_bbg4b"),
+"idle": SubResource("Animation_br0eo"),
+"jump": SubResource("Animation_jhxiv"),
+"jump_left": SubResource("Animation_xywal"),
+"swing": SubResource("Animation_8bcev"),
+"walk": SubResource("Animation_oo3xh"),
+"walk_swing": SubResource("Animation_evyug")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sl0k6"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7diu0"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vi3eo"]
+animation = &"jump_left"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_o04vh"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7diu0")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_vi3eo")
+blend_point_1/pos = -1.0
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oktnv"]
+animation = &"swing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d5oo0"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_61rp5"]
+animation = &"walk_swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xhn86"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ojwve"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e17ai"]
+advance_mode = 2
+advance_condition = &"swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_53n7h"]
+switch_mode = 1
+advance_mode = 2
+advance_condition = &"walk_swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2gp70"]
+advance_mode = 2
+advance_condition = &"walk_swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6s6u8"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"not_swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_suhpl"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"not_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mxiyt"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"not_swing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_blo00"]
+advance_mode = 2
+advance_condition = &"not_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qcnsr"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_us2tk"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2fjaw"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bxboq"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"not_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdqao"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_15faw"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w2835"]
+states/Start/position = Vector2(200, 99.7778)
+states/idle/node = SubResource("AnimationNodeAnimation_sl0k6")
+states/idle/position = Vector2(287.444, 39.3333)
+states/jump/node = SubResource("AnimationNodeBlendSpace1D_o04vh")
+states/jump/position = Vector2(403.333, 112.667)
+states/swing/node = SubResource("AnimationNodeAnimation_oktnv")
+states/swing/position = Vector2(535.444, 39.1111)
+states/walk/node = SubResource("AnimationNodeAnimation_d5oo0")
+states/walk/position = Vector2(288.333, 181.333)
+states/walk_swing/node = SubResource("AnimationNodeAnimation_61rp5")
+states/walk_swing/position = Vector2(535.667, 172)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_xhn86"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ojwve"), "idle", "swing", SubResource("AnimationNodeStateMachineTransition_e17ai"), "swing", "walk_swing", SubResource("AnimationNodeStateMachineTransition_53n7h"), "walk", "walk_swing", SubResource("AnimationNodeStateMachineTransition_2gp70"), "walk_swing", "walk", SubResource("AnimationNodeStateMachineTransition_6s6u8"), "walk_swing", "swing", SubResource("AnimationNodeStateMachineTransition_suhpl"), "swing", "idle", SubResource("AnimationNodeStateMachineTransition_mxiyt"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_blo00"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_qcnsr"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_us2tk"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_2fjaw"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_bxboq"), "swing", "jump", SubResource("AnimationNodeStateMachineTransition_sdqao"), "walk_swing", "jump", SubResource("AnimationNodeStateMachineTransition_15faw")]
+graph_offset = Vector2(-168, 6)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_uckg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tt113")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_80ql5")
+hframes = 4
+vframes = 4
+region_rect = Rect2(87, 217, 5, 7)
+
+[node name="HitBox" type="Area2D" parent="Sprite2D"]
+position = Vector2(8, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitBox"]
+shape = SubResource("CircleShape2D_87x61")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q3r1v")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." groups=["player"]]
+tree_root = SubResource("AnimationNodeStateMachine_w2835")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/jump = false
+parameters/conditions/not_swing = false
+parameters/conditions/not_walk = false
+parameters/conditions/swing = false
+parameters/conditions/walk = false
+parameters/conditions/walk_swing = false
+parameters/jump/blend_position = 0.000352263
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y5vux")
+autoplay = true
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sd5r4")
+
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="finished" from="WalkSound" to="." method="_on_walk_sound_finished"]
